@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
 
-    const [userData, setUserData] = useState({ name: "", email: "", password: ""})
+    const [userData, setUserData] = useState({ name: "", email: "", password: "", role:"Buyer"})
     const router = useNavigate();
 
 
@@ -30,11 +30,20 @@ const Register = () => {
         }
     }
 
+    function selectRole(event) {
+      setUserData({...userData, ["role"]: event.target.value })
+    }
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <label>Name:</label><br />
         <input type='text' onChange={handleChange} name='name' /><br />
+        <label>Select Role:</label><br />
+        <select onChange={selectRole}>
+          <option value="Buyer">Buyer</option>
+          <option value="Seller">Seller</option>
+        </select>
         <label>Email:</label><br />
         <input type='email' onChange={handleChange} name='email' /><br />
         <label>Password:</label><br />

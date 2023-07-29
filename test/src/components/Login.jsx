@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from './Context/AuthContext';
 
 const Login = () => {
+
+    const {state, Login} = useContext(AuthContext);
 
     const [userData, setUserData] = useState({ email: "", password: "" });
     const router = useNavigate();
@@ -26,7 +29,8 @@ const Login = () => {
             if (flag == false) {
                 return alert("Please Check your email & password")
             } else {
-                localStorage.setItem("Current-user", JSON.stringify(userData));
+                localStorage.setItem("Current-user", JSON.stringify(users[i]));
+                Login(users[i])
                 alert("Login Successfull....");
                 setUserData({ email: "", password: "" });
                 router('/')
