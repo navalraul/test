@@ -23,6 +23,7 @@ const Register = () => {
             console.log(Ls)
 
             localStorage.setItem("Users", JSON.stringify(array));
+            setUserData({  name: "", email: "", password: "", role:"Buyer" })
             alert("Registration Successful...")
             router('/login')
         } else{
