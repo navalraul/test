@@ -13,6 +13,7 @@ const AllProduct = () => {
         if (productsFromDb) {
             setIsProductsExist(true);
             setProducts(productsFromDb)
+            console.log(productsFromDb)
         } else {
             setIsProductsExist(false)
         }

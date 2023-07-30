@@ -50,6 +50,7 @@ const Register = () => {
         <label>Password:</label><br />
         <input type='password' onChange={handleChange} name='password' /><br />
         <input type='submit' value='Register' />
+        <button onClick={() => router('/login')}>Login</button>
       </form>
     </div>
   )
