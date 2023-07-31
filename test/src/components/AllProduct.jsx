@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const AllProduct = () => {
 
 
     const [isProductsExist, setIsProductsExist] = useState(false);
     const [products, setProducts] = useState();
+    const router = useNavigate();
+    
+    
 
     console.log(products, " - products")
 
@@ -19,11 +23,13 @@ const AllProduct = () => {
         }
     }, [])
 
+    
+
   return (
     <div>
       {!isProductsExist ? <div>No products</div>
                 :
-                <div style={{ display: "flex", justifyContent: "space-around" }}>
+                <div style={{ display: "flex", justifyContent: "space-around", cursor: 'pointer' }}>
                     {products && products.map((pro) => (
                         <div style={{ width: "23%", border: "2px solid black" }} key={pro.name}>
                             <img src={pro.image} />

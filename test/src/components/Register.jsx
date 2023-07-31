@@ -16,7 +16,7 @@ const Register = () => {
         if(userData.name && userData.email && userData.password) {
 
             const array = JSON.parse(localStorage.getItem("Users")) || [];
-            const Ls = { name: userData.name, email: userData.email, password: userData.password };
+            const Ls = { name: userData.name, email: userData.email, password: userData.password,role: userData.role };
 
             console.log(array)
             array.push(Ls);
@@ -32,6 +32,7 @@ const Register = () => {
     }
 
     function selectRole(event) {
+      console.log(event.target.value, "-role here")
       setUserData({...userData, ["role"]: event.target.value })
     }
 
@@ -44,7 +45,7 @@ const Register = () => {
         <select onChange={selectRole}>
           <option value="Buyer">Buyer</option>
           <option value="Seller">Seller</option>
-        </select>
+        </select><br />
         <label>Email:</label><br />
         <input type='email' onChange={handleChange} name='email' /><br />
         <label>Password:</label><br />
