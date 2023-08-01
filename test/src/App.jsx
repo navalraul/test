@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route exact path='/single/:id' element={<Single />} />
+        <Route exact path='/single' element={<Single />} />
         <Route exact path='/ref' element={<Ref />} />
         <Route exact path='/profile' element={<Profile />} />
         <Route exact path='/all-products' element={<AllProduct />} />

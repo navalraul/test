@@ -29,7 +29,7 @@ const AllProduct = () => {
     <div>
       {!isProductsExist ? <div>No products</div>
                 :
-                <div style={{ display: "flex", justifyContent: "space-around", cursor: 'pointer' }}>
+                <div onClick={ () => router('/single')} style={{ display: "flex", justifyContent: "space-around", cursor: 'pointer' }}>
                     {products && products.map((pro) => (
                         <div style={{ width: "23%", border: "2px solid black" }} key={pro.name}>
                             <img src={pro.image} />
