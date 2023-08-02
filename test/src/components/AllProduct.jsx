@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { redirect, useNavigate } from 'react-router-dom';
 
 const AllProduct = () => {
 
@@ -23,15 +23,19 @@ const AllProduct = () => {
         }
     }, [])
 
+
+    const redirect=(id) => {
+        router(`/single/${id}`)
+    }
     
 
   return (
     <div>
       {!isProductsExist ? <div>No products</div>
                 :
-                <div onClick={ () => router('/single')} style={{ display: "flex", justifyContent: "space-around", cursor: 'pointer' }}>
+                <div style={{ display: "flex", justifyContent: "space-around", cursor: 'pointer' }}>
                     {products && products.map((pro) => (
-                        <div style={{ width: "23%", border: "2px solid black" }} key={pro.name}>
+                        <div onClick={ () => redirect(pro.id)} style={{ width: "23%", border: "2px solid black" }} key={pro.name}>
                             <img src={pro.image} />
                             <h3>Name : {pro.name}</h3>
                             <h4>Category :{pro.category}</h4>
