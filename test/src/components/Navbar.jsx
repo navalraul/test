@@ -23,6 +23,7 @@ const Navbar = () => {
       <div style={{ width: "30%", marginTop: "8px" }} onClick={ ()=> router('/')}>E-Commerce</div>
       <div style={{ width: "60%", display: 'flex', justifyContent: "space-around", marginTop: "8px" }}>
         <div onClick={ ()=> router('/all-products')}>All Products</div>
+        {userData?.role == "Buyer" && <div onClick={ ()=> router('/cart')}>Cart</div>}
         {userData?.role == "Seller" && <div onClick={ ()=> router('/add-product')}>Add Product</div>}
         {userData?.name && <div onClick={ ()=> router('/profile')}>Profile-{userData.name}</div>}
         {userData?.name ?

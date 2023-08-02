@@ -10,12 +10,14 @@ import AllProduct from './components/AllProduct';
 import Profile from './components/Profile';
 import Ref from './components/Ref';
 import Single from './components/Single';
+import Cart from './components/Cart';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Routes>
+        <Route exact path='/cart' element={<Cart />} />
         <Route exact path='/single/:id' element={<Single />} />
         <Route exact path='/ref' element={<Ref />} />
         <Route exact path='/profile' element={<Profile />} />
