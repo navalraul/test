@@ -14,6 +14,7 @@ const AllProduct = () => {
 
     useEffect(() => {
         const productsFromDb = JSON.parse(localStorage.getItem("Products"))
+        // console.log(productsFromDb)
         if (productsFromDb) {
             setIsProductsExist(true);
             setProducts(productsFromDb)

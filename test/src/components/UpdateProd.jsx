@@ -40,7 +40,7 @@ const UpdateProd = () => {
 
                 localStorage.setItem("Products", JSON.stringify(allPro));
                 setProductData({})
-                // route('/single_product')
+                // router('/single_product')
                 alert("Product Update")
             }
         }
